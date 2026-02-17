@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schumann Resonance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Schumannova rezonance</h1>
+      <button id="theme-toggle" title="Přepnout motiv">🌙</button>
+    </header>
+
+    <!-- Current reading -->
+    <section class="card current-reading">
+      <div class="reading-main">
+        <span class="label">Aktuální frekvence</span>
+        <span class="value" id="current-freq">—</span>
+        <span class="unit">Hz</span>
+      </div>
+      <div class="reading-secondary">
+        <div class="stat">
+          <span class="label">Amplituda</span>
+          <span class="value" id="current-amp">—</span>
+        </div>
+        <div class="stat">
+          <span class="label">Trend</span>
+          <span class="value" id="current-trend">—</span>
+        </div>
+        <div class="stat">
+          <span class="label">Výkon</span>
+          <span class="value" id="current-power">—</span>
+        </div>
+      </div>
+      <p class="context" id="context-text">Načítám data…</p>
+    </section>
+
+    <!-- Actions row -->
+    <section class="card actions-row">
+      <div class="status" id="data-status">
+        <span class="dot"></span>
+        <span class="status-text">Stav: načítám…</span>
+      </div>
+      <button id="btn-refresh" class="btn-primary">Obnovit data</button>
+    </section>
+
+    <!-- Harmonics SR1–SR5 -->
+    <section class="card harmonics-section">
+      <h2>Harmonické frekvence</h2>
+      <div class="harmonics-grid" id="harmonics-grid">
+        <!-- filled by JS -->
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section class="card chart-section">
+      <div class="chart-header">
+        <h2>Posledních 24 hodin</h2>
+        <div class="chart-toggle">
+          <button class="chart-tab active" data-range="24h">24 h</button>
+          <button class="chart-tab" data-range="1h">1 h</button>
+        </div>
+      </div>
+      <canvas id="chart"></canvas>
+    </section>
+
+    <!-- Statistics -->
+    <section class="card stats-section">
+      <h2>Statistiky</h2>
+      <div class="stats-grid" id="stats-grid">
+        <!-- filled by JS -->
+      </div>
+    </section>
+
+    <!-- Signal quality -->
+    <section class="card quality-section">
+      <h2>Kvalita signálu</h2>
+      <div class="quality-grid" id="quality-grid">
+        <!-- filled by JS -->
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
