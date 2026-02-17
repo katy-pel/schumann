@@ -246,6 +246,38 @@ header h1 {
   color: var(--text-secondary);
 }
 
+/* Harmonics legend */
+.harmonics-legend {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.harmonics-legend h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.harmonics-legend dl {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.harmonics-legend dt {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.harmonics-legend dd {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-left: 0;
+}
+
 /* Chart */
 .chart-header {
   display: flex;
