@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schumann Resonance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Schumannova rezonance</h1>
+      <button id="theme-toggle" title="Přepnout motiv">🌙</button>
+    </header>
+
+    <!-- Current reading -->
+    <section class="card current-reading">
+      <div class="reading-main">
+        <span class="label">Aktuální frekvence</span>
+        <span class="value" id="current-freq">—</span>
+        <span class="unit">Hz</span>
+      </div>
+      <div class="reading-secondary">
+        <div class="stat">
+          <span class="label">Amplituda</span>
+          <span class="value" id="current-amp">—</span>
+        </div>
+        <div class="stat">
+          <span class="label">Denní max</span>
+          <span class="value" id="today-max">—</span>
+          <span class="delta" id="delta-yesterday"></span>
+        </div>
+        <div class="stat">
+          <span class="label">Trend</span>
+          <span class="value" id="current-trend">—</span>
+        </div>
+      </div>
+      <p class="context" id="context-text">Načítám data…</p>
+    </section>
+
+    <!-- Status + ad-hoc -->
+    <section class="card actions-row">
+      <div class="status" id="scrape-status">
+        <span class="dot"></span>
+        <span class="status-text">Stav: načítám…</span>
+      </div>
+      <button id="btn-scrape" class="btn-primary">Zjistit teď</button>
+    </section>
+
+    <!-- Chart -->
+    <section class="card chart-section">
+      <h2>Posledních 30 dní</h2>
+      <canvas id="chart"></canvas>
+    </section>
+
+    <!-- Table -->
+    <section class="card table-section">
+      <h2>Historie měření</h2>
+      <div class="table-wrap">
+        <table id="history-table">
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Čas</th>
+              <th>Frekvence (Hz)</th>
+              <th>Amplituda</th>
+              <th>Typ</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
