@@ -254,27 +254,35 @@ header h1 {
 }
 
 .harmonics-legend h3 {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
 }
 
 .harmonics-legend dl {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  align-items: baseline;
 }
 
 .harmonics-legend dt {
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.harmonics-legend dt strong {
+  font-weight: 700;
   color: var(--accent);
 }
 
 .harmonics-legend dd {
-  font-size: 0.8rem;
+  font-size: 0.68rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.45;
   margin-left: 0;
 }
 
