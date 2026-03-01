@@ -71,7 +71,7 @@ async function loadLatest() {
     const statusEl = document.getElementById('data-status');
     const dot = statusEl.querySelector('.dot');
     const text = statusEl.querySelector('.status-text');
-    if (data.status === 'aktif') {
+    if (data.status === 'active' || data.status === 'aktif') {
       dot.className = 'dot ok';
       const dateStr = new Date(data.timestamp * 1000).toLocaleString('cs-CZ');
       text.textContent = `Poslední aktualizace: ${dateStr}`;
